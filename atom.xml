@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>橙·意</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-08-16T11:49:23.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Amyppp</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>0x00 写在开始</title>
+    <link href="http://yoursite.com/2017/08/16/0x00-%E5%86%99%E5%9C%A8%E5%BC%80%E5%A7%8B/"/>
+    <id>http://yoursite.com/2017/08/16/0x00-写在开始/</id>
+    <published>2017-08-16T01:50:47.000Z</published>
+    <updated>2017-08-16T11:49:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="阿橙搭博客"><a href="#阿橙搭博客" class="headerlink" title="阿橙搭博客"></a>阿橙搭博客</h1><p>Tags</p>
+<ul>
+<li>GoDaddy-&gt;购买域名</li>
+<li>Github-&gt;托管服务器</li>
+<li>Hexo-&gt;博客框架</li>
+</ul>
+<p>写在前面，多谢这位小姐姐</p>
+<blockquote>
+<p>传送门： <a href="http://t.im/1fi9x" target="_blank" rel="external">http://t.im/1fi9x</a></p>
+</blockquote>
+<a id="more"></a>
+<hr>
+<p><strong>步骤</strong></p>
+<ol>
+<li>GoDaddy购买域名</li>
+<li>安装hexo</li>
+<li>注册Github</li>
+<li>将blog部署到Github上</li>
+<li>域名解析</li>
+</ol>
+<hr>
+<h2 id="一、购买域名"><a href="#一、购买域名" class="headerlink" title="一、购买域名"></a>一、购买域名</h2><p>直接在GoDaddy购买.me域名。省去备案的烦恼。<br><a href="https://dcc.godaddy.com/manage/" target="_blank" rel="external">https://dcc.godaddy.com/manage/</a></p>
+<h2 id="二、安装hexo"><a href="#二、安装hexo" class="headerlink" title="二、安装hexo"></a>二、安装hexo</h2><p>前提：安装好Git和Node.js</p>
+<h3 id="Mac下安装Git"><a href="#Mac下安装Git" class="headerlink" title="Mac下安装Git"></a>Mac下安装Git</h3><ol>
+<li>官网下载链接：<a href="https://git-scm.com/download/mac" target="_blank" rel="external">https://git-scm.com/download/mac</a></li>
+<li>下载之后打开，双击.pkg安装</li>
+<li>打开终端，使用git –version或者which git查看是否安装好</li>
+</ol>
+<h3 id="Mac下安装Node-js"><a href="#Mac下安装Node-js" class="headerlink" title="Mac下安装Node.js"></a>Mac下安装Node.js</h3><ol>
+<li><p>安装homebrew：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ruby -e “$(curl -fsSL </div><div class="line">https://raw.githubusercontent.com/Homebrew/install/master/install); </div><div class="line">#homebrew是MacOS的软件包管理器，官网：https://brew.sh/index_zh-cn.html</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装node：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install node</div></pre></td></tr></table></figure>
+</li>
+<li><p>查看node安装成功与否:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node -v</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="进入blog路径安装、初始化hexo"><a href="#进入blog路径安装、初始化hexo" class="headerlink" title="进入blog路径安装、初始化hexo"></a>进入blog路径安装、初始化hexo</h3><ol>
+<li><p>进入博客文件夹：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd xx/xxxx/博客</div></pre></td></tr></table></figure>
+</li>
+<li><p>文件夹内安装hexo：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-cli</div></pre></td></tr></table></figure>
+</li>
+<li><p>文件夹内初始化框架：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init blog</div></pre></td></tr></table></figure>
+</li>
+<li><p>进入初始化好的blog文件夹：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd blog</div></pre></td></tr></table></figure>
+</li>
+<li><p>最后执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure>
+</li>
+<li><p>以上三条语句（hexo init blog/cd blog/npm install）执行完之后，在文件夹中，你看到：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">├── _config.yml //网站的配置信息，您可以在此配置大部分的参数。 </div><div class="line">├── package.json </div><div class="line">├── scaffolds //模版文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。 </div><div class="line">├── source //资源文件夹是存放用户资源的地方。</div><div class="line"> | ├── _drafts</div><div class="line"> | └── _posts </div><div class="line">└── themes //主题文件夹。Hexo会根据主题来生成静态页面。</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="本地建设blog"><a href="#本地建设blog" class="headerlink" title="本地建设blog"></a>本地建设blog</h3><ol>
+<li><p>新建一篇文章：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo new &quot;我的第一篇文章&quot;</div><div class="line">#新建的文章路径为blog/source/_post里的md文件</div></pre></td></tr></table></figure>
+</li>
+<li><p>生成网站：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate #可简写成 hexo g</div></pre></td></tr></table></figure>
+</li>
+<li><p>启动本地服务器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo server #可简写成 hexo s</div></pre></td></tr></table></figure>
+</li>
+<li><p>浏览器输入：<a href="http://127.0.0.1:4000" target="_blank" rel="external">http://127.0.0.1:4000</a> 即可本地查看博客</p>
+</li>
+</ol>
+<h2 id="三、注册GitHub"><a href="#三、注册GitHub" class="headerlink" title="三、注册GitHub"></a>三、注册GitHub</h2><ol>
+<li>官网：<a href="https://github.com/" target="_blank" rel="external">https://github.com/</a></li>
+<li>进入个人主页，点击 “New repository”，进入“Create a new repository”页面</li>
+<li>“Repository name”里填写：用户名.github.io,选中“Public”按钮，选中“Initilize this respository with a README”按钮，最后点击“Create repository”</li>
+</ol>
+<h3 id="Mac下配置SSH-key与GitHub通信"><a href="#Mac下配置SSH-key与GitHub通信" class="headerlink" title="Mac下配置SSH-key与GitHub通信"></a>Mac下配置SSH-key与GitHub通信</h3><blockquote>
+<p>参考：<a href="http://www.jianshu.com/p/f008d9fe3f34" target="_blank" rel="external">http://www.jianshu.com/p/f008d9fe3f34</a></p>
+</blockquote>
+<ol>
+<li><p>在终端中设置git的user name和email：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name &quot;xxxx&quot;</div><div class="line">git config --blobal user.email &quot;xxxx@xxx.com&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>查看当前目录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pwd</div></pre></td></tr></table></figure>
+</li>
+<li><p>检查user和email是否配置成功：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat .gitconfig</div></pre></td></tr></table></figure>
+</li>
+<li><p>进入.ssh文件夹，查看是否存在ssh密钥（如果没有密钥则不会进入此文件夹）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd ~/.ssh</div></pre></td></tr></table></figure>
+</li>
+<li><p>生成密钥：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa</div><div class="line">#一路回车，默认设置，最终生成文件名为id_rsa的两个文件</div></pre></td></tr></table></figure>
+</li>
+<li><p>生成的密钥将会存储在.ssh目录下，检查.ssh中生成的文件，进入.ssh目录，终端输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd ~/.ssh</div></pre></td></tr></table></figure>
+</li>
+<li><p>查看此文件夹中生成的文件，终端输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">open .</div></pre></td></tr></table></figure>
+</li>
+<li><p>添加该密钥：ssh-add -K 文件名，终端输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-add -K id_rsa</div></pre></td></tr></table></figure>
+</li>
+<li><p>在.ssh目录下，查看公钥，并复制公钥，终端输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat id_rsa.pub</div></pre></td></tr></table></figure>
+</li>
+<li><p>登陆GitHub，点击右上角头像里面的setting，左边栏点击SSH and GPG keys，然后点击New SSH key，添加进去即可。</p>
+</li>
+<li>测试是否连接成功，终端输入：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh git@github.com</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="四、将blog部署到Github上（使用git-push部署）"><a href="#四、将blog部署到Github上（使用git-push部署）" class="headerlink" title="四、将blog部署到Github上（使用git push部署）"></a>四、将blog部署到Github上（使用git push部署）</h2><ol>
+<li><p>进入自己的blog目录，终端输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd xxx/xxx/xxx/blog</div></pre></td></tr></table></figure>
+</li>
+<li><p>初始化博客，终端输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g</div></pre></td></tr></table></figure>
+</li>
+<li><p>把public文件夹上传到github仓库中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">cd public</div><div class="line">git init #初始化本地仓库</div><div class="line">git add . #将本地文件加到仓库里</div><div class="line">git commit -m &quot;message&quot; #设置提交信息</div><div class="line">git remote add origin git@github.com:xxxx/xxxx.github.io.git #本地仓库链接远程仓库，其中xxx.github.io是你的GitHub仓库名称，.git是后缀</div><div class="line">git push origin master #push文件到仓库中</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="问题总结（参考：http-blog-csdn-net-chaihuasong-article-details-37911723）"><a href="#问题总结（参考：http-blog-csdn-net-chaihuasong-article-details-37911723）" class="headerlink" title="问题总结（参考：http://blog.csdn.net/chaihuasong/article/details/37911723）"></a>问题总结（参考：<a href="http://blog.csdn.net/chaihuasong/article/details/37911723）" target="_blank" rel="external">http://blog.csdn.net/chaihuasong/article/details/37911723）</a></h3><ol>
+<li><p>git pull失败，提示：fatal: refusing to merge unrelated histories<br> 可在进行git pull时，添加一个可选项，即终端输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git pull origin master --allow-unrelated-histories</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote add origin git@github.com:xxxxx/xxxxx.github.io.git</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>报错，提示出错信息为：fatal: remote origin already exists.<br>解决办法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#先输入</div><div class="line">git remote rm origin</div><div class="line">#再输入</div><div class="line">git remote add origin git@github.com:xxxxx/xxxxxx.github.io.git</div></pre></td></tr></table></figure></p>
+<ol>
+<li>如果输入：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin master</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>报错，提示出错信息为：error:failed to push som refs to …….<br>解决办法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#先输入</div><div class="line">git pull origin master #先把远程服务器github上面的文件拉下来</div><div class="line">#再输入</div><div class="line">git push origin master</div><div class="line">#若再报错：fatal: Couldn’t find remote ref master/fatal: ‘origin’ does not appear to be a git repository/fatal: Could not read from remote repository，则需要重新输入</div><div class="line">git remote add origin git@github.com:xxxxxx/xxxxxx.github.io.git</div></pre></td></tr></table></figure></p>
+<h3 id="Push-an-existing-repository-from-the-command-line"><a href="#Push-an-existing-repository-from-the-command-line" class="headerlink" title="Push an existing repository from the command line"></a>Push an existing repository from the command line</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git remote add origin git@github.com:xxxx/xxxx.github.io.git</div><div class="line">git push -u origin master</div></pre></td></tr></table></figure>
+<h2 id="五、域名解析"><a href="#五、域名解析" class="headerlink" title="五、域名解析"></a>五、域名解析</h2><ul>
+<li>进入GoDaddy进行域名绑定</li>
+<li>进入本地blog的public目录下，新建CNAME</li>
+<li>把域名写到CNAME里</li>
+<li>传到GitHub仓库里</li>
+</ul>
+<h3 id="进入GoDaddy进行域名绑定"><a href="#进入GoDaddy进行域名绑定" class="headerlink" title="进入GoDaddy进行域名绑定"></a>进入GoDaddy进行域名绑定</h3><ol>
+<li>登陆GoDaddy，点击右上客户头像，点击“我的产品”</li>
+<li>点击DNS，进入DNS管理页面</li>
+<li>在记录栏中进行添加或修改：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#修改</div><div class="line">主机：xxxx.github.io 指向：xxxx.github.io TTL：1小时</div><div class="line">#添加</div><div class="line">类型：CNAME 主机：@ 指向：xxxx.github.io</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="进入本地blog的public目录下，新建CNAME，把域名写到CNAME里"><a href="#进入本地blog的public目录下，新建CNAME，把域名写到CNAME里" class="headerlink" title="进入本地blog的public目录下，新建CNAME，把域名写到CNAME里"></a>进入本地blog的public目录下，新建CNAME，把域名写到CNAME里</h3><ol>
+<li>CNAME文件用文本编辑打开，后缀无</li>
+<li>文件内容写自己的域名</li>
+<li>将public中的CNAME复制到source文件夹里，避免每次推的时候仓库里的CNAME文件被覆盖掉</li>
+</ol>
+<h3 id="传到GitHub仓库里"><a href="#传到GitHub仓库里" class="headerlink" title="传到GitHub仓库里"></a>传到GitHub仓库里</h3><ol>
+<li><p>进入本地博客的public目录下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd xxxx/xxxx/blog</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果上传成功的话，进入到我的GitHub仓库中会看到CNAME文件</p>
+</li>
+<li>成功。</li>
+</ol>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><h3 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h3><ol>
+<li>问题1:Mac上安装Hexo出现DTraceProviderBindings MODULE_NOT_FOUND</li>
+</ol>
+<blockquote>
+<p>参考1：<a href="http://hucaihua.cn/2016/12/03/mac_hexo_DTraceProviderBindings_MODULE_NOT_FOUND/" target="_blank" rel="external">http://hucaihua.cn/2016/12/03/mac_hexo_DTraceProviderBindings_MODULE_NOT_FOUND/</a><br>参考2：<a href="http://www.tuicool.com/articles/7J3IRnA" target="_blank" rel="external">http://www.tuicool.com/articles/7J3IRnA</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;阿橙搭博客&quot;&gt;&lt;a href=&quot;#阿橙搭博客&quot; class=&quot;headerlink&quot; title=&quot;阿橙搭博客&quot;&gt;&lt;/a&gt;阿橙搭博客&lt;/h1&gt;&lt;p&gt;Tags&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GoDaddy-&amp;gt;购买域名&lt;/li&gt;
+&lt;li&gt;Github-&amp;gt;托管服务器&lt;/li&gt;
+&lt;li&gt;Hexo-&amp;gt;博客框架&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;写在前面，多谢这位小姐姐&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;传送门： &lt;a href=&quot;http://t.im/1fi9x&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://t.im/1fi9x&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="网站运维" scheme="http://yoursite.com/categories/%E7%BD%91%E7%AB%99%E8%BF%90%E7%BB%B4/"/>
+    
+    
+      <category term="GoDaddy" scheme="http://yoursite.com/tags/GoDaddy/"/>
+    
+      <category term="Github" scheme="http://yoursite.com/tags/Github/"/>
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+  </entry>
+  
+</feed>
