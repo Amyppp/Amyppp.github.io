@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-16T11:49:23.000Z</updated>
+  <updated>2017-11-01T14:35:22.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,90 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>0x01 WebGoat for Mac</title>
+    <link href="http://yoursite.com/2017/11/01/0x01%20WebGoat%20for%20Mac/"/>
+    <id>http://yoursite.com/2017/11/01/0x01 WebGoat for Mac/</id>
+    <published>2017-11-01T14:00:00.000Z</published>
+    <updated>2017-11-01T14:35:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="搭建本地渗透环境"><a href="#搭建本地渗透环境" class="headerlink" title="搭建本地渗透环境"></a>搭建本地渗透环境</h1><p>Tags</p>
+<ul>
+<li>Java</li>
+<li>Tomcat</li>
+<li>WebGoat</li>
+<li>渗透测试</li>
+</ul>
+<a id="more"></a>
+<hr>
+<p><strong>步骤</strong></p>
+<ol>
+<li>配置Java环境</li>
+<li>配置Tomcat环境</li>
+<li>配置WebGoat环境</li>
+<li>启动Tomcat，访问WebGoat，开始渗透</li>
+</ol>
+<hr>
+<h2 id="一、配置Java环境"><a href="#一、配置Java环境" class="headerlink" title="一、配置Java环境"></a>一、配置Java环境</h2><p>Mac自带jdk，但可以自行替换更高版本：</p>
+<blockquote>
+<p>参考：<a href="http://www.cnblogs.com/xd502djj/p/6642133.html" target="_blank" rel="external">http://www.cnblogs.com/xd502djj/p/6642133.html</a></p>
+</blockquote>
+<h2 id="二、配置Tomcat环境"><a href="#二、配置Tomcat环境" class="headerlink" title="二、配置Tomcat环境"></a>二、配置Tomcat环境</h2><ol>
+<li>登陆Apache Tomcat官网：<a href="https://tomcat.apache.org/" target="_blank" rel="external">https://tomcat.apache.org/</a></li>
+<li>点击左侧的Download，选择合适的版本<br><img src="http://outli4pps.bkt.clouddn.com/20171101150953905243018.png" alt="tomcat-download"></li>
+<li>设置本地放置路径：解压，将压缩的文件夹命名为Tomcat，置于资源库内<br><img src="http://outli4pps.bkt.clouddn.com/20171101150953949391085.png" alt="tomcat-path"></li>
+<li>检查Tomcat是否能正常启动<br>打开终端，切换到Tomcat的bin目录，再启动Tomcat：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /Library/Tomcat/bin</div><div class="line">./startup.sh</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>终端回显如下，则表示正常启动：<br><img src="http://outli4pps.bkt.clouddn.com/20171101150954059217791.png" alt="tomcat-start.png"></p>
+<ol>
+<li>浏览器输入：<a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a> 见到那只熟悉的猫，表示Tomcat配置成功<br><img src="http://outli4pps.bkt.clouddn.com/20171101150954087428198.png" alt="tomcat-success.png"></li>
+<li>关闭Tomcat<br>打开终端，切换到Tomcat的bin目录，输入：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /Library/Tomcat/bin</div><div class="line">./shutdown.sh</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="三、配置WebGoat环境"><a href="#三、配置WebGoat环境" class="headerlink" title="三、配置WebGoat环境"></a>三、配置WebGoat环境</h2><ol>
+<li>下载WebGoat的war包：<a href="https://github.com/WebGoat/WebGoat/releases" target="_blank" rel="external">https://github.com/WebGoat/WebGoat/releases</a></li>
+<li>复制war文件到tomcat的webapps目录，并重命名为WebGoat.war</li>
+<li>配置tomcat的用户，修改tomcat/conf/tomcat-users.xml文件：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;role rolename=&quot;webgoat_basic&quot;/&gt;</div><div class="line">&lt;role rolename=&quot;webgoat_admin&quot;/&gt;</div><div class="line">&lt;role rolename=&quot;webgoat_user&quot;/&gt;</div><div class="line">&lt;role rolename=&quot;tomcat&quot;/&gt;</div><div class="line">&lt;role rolename=&quot;manager-gui&quot;/&gt;</div><div class="line">&lt;user username=&quot;tomcat&quot; password=&quot;tomcat&quot; roles=&quot;manager-gui&quot;/&gt;</div><div class="line">&lt;user password=&quot;webgoat&quot; roles=&quot;webgoat_admin&quot; username=&quot;webgoat&quot;/&gt;</div><div class="line">&lt;user password=&quot;basic&quot; roles=&quot;webgoat_user,webgoat_basic&quot; username=&quot;basic&quot;/&gt;</div><div class="line">&lt;user password=&quot;tomcat&quot; roles=&quot;tomcat&quot; username=&quot;tomcat&quot;/&gt;</div><div class="line">&lt;user password=&quot;guest&quot; roles=&quot;webgoat_user&quot; username=&quot;guest&quot;/&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="四、启动Tomcat，访问WebGoat，开始渗透"><a href="#四、启动Tomcat，访问WebGoat，开始渗透" class="headerlink" title="四、启动Tomcat，访问WebGoat，开始渗透"></a>四、启动Tomcat，访问WebGoat，开始渗透</h2><ol>
+<li>浏览器输入：<a href="http://localhost:8080/WebGoat/attack" target="_blank" rel="external">http://localhost:8080/WebGoat/attack</a><br><img src="http://outli4pps.bkt.clouddn.com/20171101150954642585029.png" alt="WebGoat-login"></li>
+</ol>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><h3 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h3><ol>
+<li>问题1: 启动tomcat时，碰到<code>-bash: ./startup.sh: Permission denied</code><br>解决1: 紧接着tomcat的bin目录下，使用文件/目录权限设置命令chmod修改后即可：<code>chmod u+x *.sh</code></li>
+<li>注意WebGoat版本问题，阿橙似乎因为装错版本问题，导致WebGoat上面的题目非常少。</li>
+<li>所以决定要拿其他的测试平台来练手了。</li>
+<li>下一周要搞一搞Docker，听说很适合用来搭靶场。</li>
+</ol>
+<blockquote>
+<p>参考1: <a href="http://www.jb51.net/article/94201.htm" target="_blank" rel="external">http://www.jb51.net/article/94201.htm</a><br>参考2: <a href="http://www.vuln.cn/6544" target="_blank" rel="external">http://www.vuln.cn/6544</a> </p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;搭建本地渗透环境&quot;&gt;&lt;a href=&quot;#搭建本地渗透环境&quot; class=&quot;headerlink&quot; title=&quot;搭建本地渗透环境&quot;&gt;&lt;/a&gt;搭建本地渗透环境&lt;/h1&gt;&lt;p&gt;Tags&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Java&lt;/li&gt;
+&lt;li&gt;Tomcat&lt;/li&gt;
+&lt;li&gt;WebGoat&lt;/li&gt;
+&lt;li&gt;渗透测试&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="Mac" scheme="http://yoursite.com/tags/Mac/"/>
+    
+      <category term="WebGoat" scheme="http://yoursite.com/tags/WebGoat/"/>
+    
+      <category term="Tomcat" scheme="http://yoursite.com/tags/Tomcat/"/>
+    
+  </entry>
   
   <entry>
     <title>0x00 写在开始</title>
