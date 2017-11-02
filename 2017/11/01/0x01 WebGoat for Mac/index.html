@@ -109,7 +109,7 @@
 <meta property="og:image" content="http://outli4pps.bkt.clouddn.com/20171101150954059217791.png">
 <meta property="og:image" content="http://outli4pps.bkt.clouddn.com/20171101150954087428198.png">
 <meta property="og:image" content="http://outli4pps.bkt.clouddn.com/20171101150954642585029.png">
-<meta property="og:updated_time" content="2017-11-01T14:35:22.000Z">
+<meta property="og:updated_time" content="2017-11-01T14:51:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="0x01 WebGoat for Mac">
 <meta name="twitter:description" content="搭建本地渗透环境Tags  Java Tomcat WebGoat 渗透测试">
@@ -407,16 +407,18 @@
 <p>参考：<a href="http://www.cnblogs.com/xd502djj/p/6642133.html" target="_blank" rel="external">http://www.cnblogs.com/xd502djj/p/6642133.html</a></p>
 </blockquote>
 <h2 id="二、配置Tomcat环境"><a href="#二、配置Tomcat环境" class="headerlink" title="二、配置Tomcat环境"></a>二、配置Tomcat环境</h2><ol>
-<li>登陆Apache Tomcat官网：<a href="https://tomcat.apache.org/" target="_blank" rel="external">https://tomcat.apache.org/</a></li>
-<li>点击左侧的Download，选择合适的版本<br><img src="http://outli4pps.bkt.clouddn.com/20171101150953905243018.png" alt="tomcat-download"></li>
-<li>设置本地放置路径：解压，将压缩的文件夹命名为Tomcat，置于资源库内<br><img src="http://outli4pps.bkt.clouddn.com/20171101150953949391085.png" alt="tomcat-path"></li>
-<li>检查Tomcat是否能正常启动<br>打开终端，切换到Tomcat的bin目录，再启动Tomcat：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /Library/Tomcat/bin</div><div class="line">./startup.sh</div></pre></td></tr></table></figure>
+<li><p>登陆Apache Tomcat官网：<a href="https://tomcat.apache.org/" target="_blank" rel="external">https://tomcat.apache.org/</a></p>
 </li>
-</ol>
-<p>终端回显如下，则表示正常启动：<br><img src="http://outli4pps.bkt.clouddn.com/20171101150954059217791.png" alt="tomcat-start.png"></p>
-<ol>
-<li>浏览器输入：<a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a> 见到那只熟悉的猫，表示Tomcat配置成功<br><img src="http://outli4pps.bkt.clouddn.com/20171101150954087428198.png" alt="tomcat-success.png"></li>
-<li>关闭Tomcat<br>打开终端，切换到Tomcat的bin目录，输入：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /Library/Tomcat/bin</div><div class="line">./shutdown.sh</div></pre></td></tr></table></figure>
+<li><p>点击左侧的Download，选择合适的版本<br><img src="http://outli4pps.bkt.clouddn.com/20171101150953905243018.png" alt="tomcat-download"></p>
+</li>
+<li><p>设置本地放置路径：解压，将压缩的文件夹命名为Tomcat，置于资源库内<br><img src="http://outli4pps.bkt.clouddn.com/20171101150953949391085.png" alt="tomcat-path"></p>
+</li>
+<li><p>检查Tomcat是否能正常启动<br>打开终端，切换到Tomcat的bin目录，再用<code>./startup.sh</code>启动Tomcat。<br>终端回显如下，则表示正常启动：<br><img src="http://outli4pps.bkt.clouddn.com/20171101150954059217791.png" alt="tomcat-start.png"></p>
+</li>
+<li><p>浏览器输入：<a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a> 见到那只熟悉的猫，表示Tomcat配置成功<br><img src="http://outli4pps.bkt.clouddn.com/20171101150954087428198.png" alt="tomcat-success.png"></p>
+</li>
+<li><p>关闭Tomcat<br>打开终端，切换到Tomcat的bin目录，输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /Library/Tomcat/bin</div><div class="line">./shutdown.sh</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="三、配置WebGoat环境"><a href="#三、配置WebGoat环境" class="headerlink" title="三、配置WebGoat环境"></a>三、配置WebGoat环境</h2><ol>
